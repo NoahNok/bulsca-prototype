@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
   <body class="overflow-x-hidden">
-  <div class="fixed w-screen">
+  <div class="fixed w-screen z-50">
     <div class="nav-wrapper ">
       <div class="nav-brand text-3xl capitalize">
          British Universities Lifesaving Clubs' Association
@@ -28,9 +28,21 @@
     </div>
   </div>
 
-  <div class="h-[50vh] w-screen bg-gray-100 flex items-center justify-center head-bg overflow-hidden  ">
-    <img src="./assets/logo/blogo.png" class="w-[12.5%] h-auto" alt="">
+  <div class="h-[50vh] w-screen bg-gray-100  overflow-hidden  ">
+
+    <div class="h-full w-full overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-full h-full head-bg flex items-center justify-center transition-opacity opacity-100 duration-1000" id="head1">
+        <img src="./assets/logo/blogo.png" class="w-[12.5%] h-auto" alt="">
+      </div>
+      <div class="absolute top-0 right-0 w-full h-full head-bg-2 flex items-center justify-center transition-opacity opacity-0 duration-1000" id="head2">
+        <img src="./assets/logo/blogo.png" class="w-[12.5%] h-auto" alt="">
+      </div>
+    </div>
+
+    
   </div>
+
+
   <div class=" mx-2 md:mx-[20%] my-[2%] ">
     <div class=" grid grid-cols-3 gap-32 text-center">
       <div class="flex flex-col items-center space-y-3">
@@ -106,4 +118,24 @@
  </footer>
 
   </body>
+  <script>
+    let h1 = document.getElementById("head1")
+    let h2 = document.getElementById("head2")
+    let toggle = true
+
+    const runner = () => {
+      if (toggle) {
+        h1.classList.add('opacity-0')
+        h2.classList.add('opacity-100')
+      } else {
+        h1.classList.remove('opacity-0')
+        h2.classList.remove('opacity-100')
+      }
+      toggle = !toggle
+    }
+
+    window.onload = function() {
+      setInterval(runner, 5000)
+    }
+  </script>
 </html>

@@ -47,6 +47,13 @@
   background-position: center;
 }
 
+.head-bg-2 {
+  background-image: url("./assets/photos/DSC_0834.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .btn {
   @apply text-bulsca bg-white p-6 cursor-pointer font-bold uppercase text-lg hover:bg-bulsca hover:border-white transition-all hover:text-white border-2 hover:scale-x-105
 }
