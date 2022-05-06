@@ -11,14 +11,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
   <body class="overflow-x-hidden">
-  <div class="fixed w-screen z-50">
-    <div class="nav-wrapper ">
-      <div class="nav-brand text-3xl capitalize">
+  <div class="fixed w-screen z-50 transition-all duration-100" id="navbar">
+    <div class="nav-wrapper transition-all duration-100">
+      <a href="/" class="nav-brand text-3xl capitalize transition-all">
          British Universities Lifesaving Clubs' Association
-      </div>
+      </a>
       <nav class="ml-auto mr-10">
         <ul class="flex space-x-12 nav-list">
-          <li><a href="#">Competitions</a></li>
+          <li><a href="competitions.html">Competitions</a></li>
           <li><a href="#">Get Involved</a></li>
           <li><a href="#">Resources</a></li>
           <li><a href="#">About</a></li>
@@ -31,10 +31,10 @@
   <div class="h-[50vh] w-screen bg-gray-100  overflow-hidden  ">
 
     <div class="h-full w-full overflow-hidden relative">
-      <div class="absolute top-0 right-0 w-full h-full head-bg flex items-center justify-center transition-opacity opacity-100 duration-1000" id="head1">
+      <div class="absolute top-0 right-0 w-full h-full head-bg flex items-center justify-center transition-opacity   duration-1000" id="head1">
         <img src="./assets/logo/blogo.png" class="w-[12.5%] h-auto" alt="">
       </div>
-      <div class="absolute top-0 right-0 w-full h-full head-bg-2 flex items-center justify-center transition-opacity opacity-0 duration-1000" id="head2">
+      <div class="absolute top-0 right-0 w-full h-full head-bg-2 flex items-center justify-center transition-opacity opacity-0 duration-1000 z-20" id="head2">
         <img src="./assets/logo/blogo.png" class="w-[12.5%] h-auto" alt="">
       </div>
     </div>
@@ -121,21 +121,31 @@
   <script>
     let h1 = document.getElementById("head1")
     let h2 = document.getElementById("head2")
+    let nav = document.getElementById("navbar")
     let toggle = true
 
     const runner = () => {
       if (toggle) {
         h1.classList.add('opacity-0')
-        h2.classList.add('opacity-100')
+        h2.classList.remove('opacity-0')
       } else {
         h1.classList.remove('opacity-0')
-        h2.classList.remove('opacity-100')
+        h2.classList.add('opacity-0')
       }
       toggle = !toggle
     }
 
     window.onload = function() {
-      setInterval(runner, 5000)
+      setInterval(runner, 10000)
+    }
+
+    window.onscroll = () => {
+      console.log('h')
+      if (window.scrollY > 50) {
+        nav.classList.add('nav-scrolled')
+      } else {
+        nav.classList.remove('nav-scrolled')
+      }
     }
   </script>
 </html>

@@ -8,6 +8,21 @@
   }
 }
 
+.nav-scrolled {
+  @apply bg-bulsca_red
+}
+
+.nav-scrolled > .nav-wrapper {
+  @apply my-3
+}
+
+.nav-scrolled > .nav-wrapper > .nav-brand {
+  max-width: 500px;
+  @apply text-2xl
+  
+  
+}
+
 .nav-brand {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -54,6 +69,29 @@
   background-position: center;
 }
 
+.head-bg-3 {
+  background-image: url("./assets/photos/DSC_0319.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .btn {
   @apply text-bulsca bg-white p-6 cursor-pointer font-bold uppercase text-lg hover:bg-bulsca hover:border-white transition-all hover:text-white border-2 hover:scale-x-105
+}
+
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.image-card-text {
+  @apply text-white text-2xl font-semibold uppercase w-full h-full flex items-center justify-center transition-all;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.image-card-text:hover {
+  background-color: rgba(0,0,0,0.4);
 }
